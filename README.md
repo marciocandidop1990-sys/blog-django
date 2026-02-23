@@ -1,35 +1,44 @@
-# 📝 Blog Django
+# 📝 Blog Django Profissional
 
-Projeto de blog desenvolvido com Django.
+Projeto de Blog desenvolvido com Django, com sistema completo de posts, imagens e paginação.
+
+---
 
 ## 🚀 Funcionalidades
 
-- Listagem de posts
-- Página de detalhes do post
-- Upload de imagem
-- Slug automático
-- Paginação
-- Painel administrativo
+- ✔ Criação de posts via Django Admin
+- ✔ Slug automático para URLs amigáveis
+- ✔ Upload de imagens
+- ✔ Paginação de posts
+- ✔ Template base com herança
+- ✔ Ordenação por data de publicação
+- ✔ Página de detalhe com 404 automático
 
-## 🛠 Tecnologias utilizadas
+---
+
+## 🛠 Tecnologias Utilizadas
 
 - Python 3
-- Django 6
-- SQLite
+- Django 5+
+- SQLite3
+- HTML5
 - Bootstrap
 
-## ▶ Como rodar o projeto
+---
 
-1. Clone o repositório
-2. Crie um ambiente virtual
-3. Instale as dependências:
+## 📷 Demonstração
 
-pip install -r requirements.txt
+Sistema possui:
 
-4. Rode as migrações:
+- Página inicial com listagem paginada
+- Página de detalhe do post
+- Upload e exibição de imagens
 
-python manage.py migrate
+---
 
-5. Inicie o servidor:
+## ⚙️ Como rodar o projeto
 
-python manage.py runserver
+Clone o repositório:
+
+```bash
+git clone https://github.com/marciocandidop1990-sys/blog-django.git
