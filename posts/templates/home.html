@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1 class="mb-4">Últimos Posts</h1>
+
+    {% for post in page_obj %}
+        <div class="card shadow mb-4">
+
+            {% if post.imagem %}
+                <img src="{{ post.imagem.url }}" class="card-img-top" style="height: 250px; object-fit: cover;">
+            {% else %}
+                <img src="{% static 'images/post1.jpg' %}" class="card-img-top" style="height: 250px; object-fit: cover;">
+            {% endif %}
+
+            <div class="card-body">
+                <h3>{{ post.titulo }}</h3>
+                <p>{{ post.conteudo|truncatewords:20 }}</p>
+
+                <a href="{% url 'post_detalhe' post.slug %}" class="btn btn-primary">
+                    Leia mais
+                </a>
+            </div>
+
+        </div>
+    {% endfor %}
+
+    <div class="mt-4 text-center">
+
+        {% if page_obj.has_previous %}
+            <a class="btn btn-outline-primary btn-sm" href="?page=1">Primeira</a>
+            <a class="btn btn-outline-primary btn-sm" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span class="mx-2">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a class="btn btn-outline-primary btn-sm" href="?page={{ page_obj.next_page_number }}">Próxima</a>
+            <a class="btn btn-outline-primary btn-sm" href="?page={{ page_obj.paginator.num_pages }}">Última</a>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
