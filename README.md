@@ -28,6 +28,18 @@ Projeto de Blog desenvolvido com Django, com sistema completo de posts, imagens 
 
 ## 📷 Demonstração
 
+### Página inicial
+
+![Home](screenshots/home.png)
+
+### Página do post
+
+![Post](screenshots/post.png)
+
+### Painel administrativo
+
+![Admin](screenshots/admin.png)
+
 Sistema possui:
 
 - Página inicial com listagem paginada
