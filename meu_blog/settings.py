@@ -120,3 +120,15 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS=[BASE_DIR/'static']
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+import os
+
+if os.environ.get("RENDER"):
+    from django.contrib.auth.models import User
+
+    if not User.objects.filter(username="marcio").exists():
+        User.objects.create_superuser(
+            "marcio",
+            "marcio@email.com",
+            "12345678"
+        )
