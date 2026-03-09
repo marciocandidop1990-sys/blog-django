@@ -122,10 +122,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 import os
+from django.contrib.auth.models import User
 
-if os.environ.get("RENDER"):
-    from django.contrib.auth.models import User
-
+if True:
     if not User.objects.filter(username="marcio").exists():
         User.objects.create_superuser(
             "marcio",
