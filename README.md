@@ -54,3 +54,16 @@ Clone o repositório:
 
 ```bash
 git clone https://github.com/marciocandidop1990-sys/blog-django.git
+
+cd blog-django
+
+python -m venv venv
+
+venv\Scripts\activate
+
+pip install -r requirements.txt
+
+python manage.py migrate
+
+python manage.py runserver
+```
